@@ -1,34 +1,25 @@
 package Reservation_System;
 
-public class Tourist_Ticket {
+public class Tourist_Ticket extends Ticket {
 
-    Ticket ticket;
+    long PNR;
     String Hoteladdress;
     String  Touristlocation;
-    Flight flight;
 
 
-    public Tourist_Ticket(Ticket ticket, String hoteladdress) {
 
-        this.ticket = ticket;
-        Hoteladdress = hoteladdress;
-    }
+    public Tourist_Ticket( String hoteladdress,String Touristlocation,long PNR) {
+        super("Tourist Ticket",479221,"MUMBAI","DELHI",795654,2,"8:00 AM","11:00",3000,false);
 
-    public Ticket getTicket() {
-        return ticket;
-    }
-
-    public String getHoteladdress() {
-        return Hoteladdress;
-    }
-
-    public String getTouristlocation() {
-        return Touristlocation;
+        this.PNR=PNR;
+        this.Hoteladdress = Hoteladdress;
+        this.Touristlocation=Touristlocation;
     }
 
 
-    public void setTouristlocation(String touristlocation) {
+    @Override
+    public void printPNR() {
+        System.out.println("Printing PNR from Tourist ticket:"+" "+PNR);
 
-        Touristlocation = touristlocation;
     }
 }
